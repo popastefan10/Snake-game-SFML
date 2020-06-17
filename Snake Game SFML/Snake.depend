@@ -299,7 +299,7 @@
 	<windows.h>
 	"functii.h"
 
-1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\functii.h
+1592396512 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\functii.h
 	<windows.h>
 	<cstdio>
 	<iostream>
@@ -1297,4 +1297,7 @@
 	<SFML/Graphics.hpp>
 	"Harta.h"
 	"snake.h"
+
+1592397190 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\game.cpp
+	"../Headers/game.h"
 
