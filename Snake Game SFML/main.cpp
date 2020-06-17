@@ -30,100 +30,112 @@ clock_t startTime;
 
 int main() {
 
+  sf::RenderWindow gameWindow(sf::VideoMode(600, 600), "Game");
 
-  Harta harta("harta.in");
-  /** ----- start menu ----- **/
+  while(gameWindow.isOpen()) {
+    sf::Event event;
 
-  while(startMenu()) {
-    startTime = clock();
-
-    system("cls");
-
-    /** ----- the game ----- **/
-
-    harta.displayHarta();
-    //drawBorders();
-    drawData(INITIAL_BODY_LENGTH);
-
-    snake playerSnake(harta);
-    food Food;
-    Food.generateColourRange();
-    bool noFood = true;
-    bool quitPause = false;
-
-    statistics stats;
-
-    /** ----- the game cycle ----- **/
-
-    while(!playerSnake.collision()) {
-      playerSnake.draw();
-      hideCursor();
-      drawData(playerSnake.getBodyLength());
-
-      /// check for pause
-      if(GetAsyncKeyState(ESC) & MSB) {
-        if(!Pause()) {
-          quitPause = true;
-          break;
-        }
-        else { /// draw the game again
-          system("cls");
-
-          //drawBorders();
-          harta.displayHarta();
-          hideCursor();
-
-          playerSnake.draw();
-          Food.draw();
-          drawData(playerSnake.getBodyLength());
-        }
-      }
-
-      if(ateFood(Food, playerSnake) || noFood) {
-        if(!noFood) {
-          playerSnake.growTail();
-          score += Food.getFoodScore();
-          foodEaten++;
-        }
-
-        spawnNewFood(Food, playerSnake,harta);
-        Food.setNewFoodColour();
-        Food.draw();
-        noFood = false;
-      }
-      else
-        playerSnake.deleteTail();
-
-      int newDirection = getNewDirection();
-
-      if(newDirection != -1 && validDirections(newDirection, playerSnake.getDirection()))
-        playerSnake.setDirection(newDirection);
-
-///      spawnNewFood(Food, playerSnake,harta);
-///      Food.draw(); ca sa vad exact daca nu se spawneaza bine, este de test
-      playerSnake.moveBody();
-
-      Sleep((DWORD) 1000 / Options::snakeSpeed);
+    while(gameWindow.pollEvent(event)) {
+      if(event.type == sf::Event::Closed)
+        gameWindow.close();
     }
 
-    if(!quitPause) {
-      stats.snakeLength = playerSnake.getBodyLength();
-      stats.totalTime = (double)(clock() - startTime) / CLOCKS_PER_SEC;
-
-      system("cls");
-      while(drawStatistics(stats)) {
-        int csbLength, csbWidth;
-        getConsoleScreenBufferSize(csbLength, csbWidth);
-
-        gotoXY(csbLength / 2, 0);
-        setTextColour(RED);
-        printf("GAME OVER!");
-        system("cls");
-      }
-
-      Sleep(300);
-    }
+    gameWindow.display();
   }
+
+//  Harta harta("harta.in");
+//  /** ----- start menu ----- **/
+//
+//  while(startMenu()) {
+//    startTime = clock();
+//
+//    system("cls");
+//
+//    /** ----- the game ----- **/
+//
+//    harta.displayHarta();
+//    //drawBorders();
+//    drawData(INITIAL_BODY_LENGTH);
+//
+//    snake playerSnake(harta);
+//    food Food;
+//    Food.generateColourRange();
+//    bool noFood = true;
+//    bool quitPause = false;
+//
+//    statistics stats;
+//
+//    /** ----- the game cycle ----- **/
+//
+//    while(!playerSnake.collision()) {
+//      playerSnake.draw();
+//      hideCursor();
+//      drawData(playerSnake.getBodyLength());
+//
+//      /// check for pause
+//      if(GetAsyncKeyState(ESC) & MSB) {
+//        if(!Pause()) {
+//          quitPause = true;
+//          break;
+//        }
+//        else { /// draw the game again
+//          system("cls");
+//
+//          //drawBorders();
+//          harta.displayHarta();
+//          hideCursor();
+//
+//          playerSnake.draw();
+//          Food.draw();
+//          drawData(playerSnake.getBodyLength());
+//        }
+//      }
+//
+//      if(ateFood(Food, playerSnake) || noFood) {
+//        if(!noFood) {
+//          playerSnake.growTail();
+//          score += Food.getFoodScore();
+//          foodEaten++;
+//        }
+//
+//        spawnNewFood(Food, playerSnake,harta);
+//        Food.setNewFoodColour();
+//        Food.draw();
+//        noFood = false;
+//      }
+//      else
+//        playerSnake.deleteTail();
+//
+//      int newDirection = getNewDirection();
+//
+//      if(newDirection != -1 && validDirections(newDirection, playerSnake.getDirection()))
+//        playerSnake.setDirection(newDirection);
+//
+/////      spawnNewFood(Food, playerSnake,harta);
+/////      Food.draw(); ca sa vad exact daca nu se spawneaza bine, este de test
+//      playerSnake.moveBody();
+//
+//      Sleep((DWORD) 1000 / Options::snakeSpeed);
+//    }
+//
+//    if(!quitPause) {
+//      stats.snakeLength = playerSnake.getBodyLength();
+//      stats.totalTime = (double)(clock() - startTime) / CLOCKS_PER_SEC;
+//
+//      system("cls");
+//      while(drawStatistics(stats)) {
+//        int csbLength, csbWidth;
+//        getConsoleScreenBufferSize(csbLength, csbWidth);
+//
+//        gotoXY(csbLength / 2, 0);
+//        setTextColour(RED);
+//        printf("GAME OVER!");
+//        system("cls");
+//      }
+//
+//      Sleep(300);
+//    }
+//  }
 
   return 0;
 }
