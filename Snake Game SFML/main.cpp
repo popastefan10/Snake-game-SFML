@@ -11,6 +11,8 @@
 #include "Headers/statistics.h"
 #include "Headers/Harta.h"
 
+#include <SFML/Graphics.hpp>
+
 
 using namespace std;
 
