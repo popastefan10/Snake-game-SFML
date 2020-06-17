@@ -14,6 +14,9 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Snake" prefix_auto="1" extension_auto="1" />
@@ -31,17 +34,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="../../SFML-2.5.1/include" />
+			<Add directory="../../../SFML/SFML-2.5.1/include" />
 		</Compiler>
 		<Linker>
 			<Add library="sfml-graphics" />
 			<Add library="sfml-window" />
 			<Add library="sfml-system" />
-			<Add directory="../../SFML-2.5.1/lib" />
+			<Add directory="../../../SFML/SFML-2.5.1/lib" />
 		</Linker>
 		<Unit filename="Headers/Harta.h" />
 		<Unit filename="Headers/food.h" />
 		<Unit filename="Headers/functii.h" />
+		<Unit filename="Headers/game.h">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="Headers/help_menu.h" />
 		<Unit filename="Headers/options_menu.h" />
 		<Unit filename="Headers/pause_menu.h">
@@ -54,6 +60,9 @@
 		<Unit filename="Scripts/Harta.cpp" />
 		<Unit filename="Scripts/food.cpp" />
 		<Unit filename="Scripts/functii.cpp" />
+		<Unit filename="Scripts/game.cpp">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="Scripts/help_menu.cpp">
 			<Option target="Debug" />
 		</Unit>

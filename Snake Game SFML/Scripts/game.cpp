@@ -11,6 +11,9 @@ game::~game() {
 void game::runGame() {
   gameWindow.create(sf::VideoMode(600, 600), "Game");
 
+  Harta harta("harta.in");
+  snake Snake(harta);
+
   while(gameWindow.isOpen()) {
     sf::Event event;
 
@@ -19,6 +22,7 @@ void game::runGame() {
         gameWindow.close();
     }
 
+    gameWindow.draw(Snake);
     gameWindow.display();
   }
 }

@@ -2,6 +2,8 @@
 #define GAME_H_INCLUDED
 
 #include <SFML/Graphics.hpp>
+#include "Harta.h"
+#include "snake.h"
 
 class game {
 

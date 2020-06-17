@@ -333,15 +333,16 @@
 
 1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\pause_menu.h
 
-1592392331 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\snake.cpp
+1592396129 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\snake.cpp
 	<iostream>
 	<cstdio>
 	"../Headers/snake.h"
 
-1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snake.h
+1592396129 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snake.h
 	<vector>
 	"snakeBody.h"
 	"Harta.h"
+	<SFML/Graphics.hpp>
 
 1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snakebody.h
 	<windows.h>
@@ -366,7 +367,7 @@
 
 1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\statistics.h
 
-1592392841 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\main.cpp
+1592396237 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\main.cpp
 	<iostream>
 	<cstdio>
 	<time.h>
@@ -379,6 +380,7 @@
 	"Headers/pause_menu.h"
 	"Headers/statistics.h"
 	"Headers/Harta.h"
+	"Headers/game.h"
 	<SFML/Graphics.hpp>
 
 1525815618 c:\stefan\info\sfml\sfml-2.5.1\include\sfml\graphics.hpp
@@ -1290,4 +1292,9 @@
 	<iostream>
 	<cstdio>
 	"../Headers/snake.h"
+
+1592396306 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\game.h
+	<SFML/Graphics.hpp>
+	"Harta.h"
+	"snake.h"
 
