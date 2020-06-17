@@ -2,6 +2,8 @@
 #include <cstdio>
 #include "../Headers/snake.h"
 
+
+
 /// 0 -> up, 1 -> right, 2 -> down, 3 -> left
 int incX[4] = {0, 1, 0, -1};
 int incY[4] = {-1, 0, 1, 0};
@@ -14,7 +16,7 @@ snake::snake(Harta h) {
   int y = h.width / 2;
 
   for(int i = 0; i < INITIAL_BODY_LENGTH; i++)
-    body.push_back(snakeBody(x + i, y));
+    body.push_back(snakeBody(x + i * 20, y));
 
   direction = 3;
 
@@ -60,9 +62,13 @@ void snake::deleteTail() {
   printf(" ");
 }
 
-void snake::draw() {
-  for(snakeBody crtBody: body)
-    drawCh(crtBody.getX(), crtBody.getY(), crtBody.getBodyColour(), crtBody.getCh());
+void snake::draw(sf::RenderTarget &target, sf::RenderStates states) const{
+  for(auto snakeBody : body){
+    sf::CircleShape shape(10);
+    shape.setFillColor(sf::Color::Red);
+    shape.setPosition(snakeBody.getX(),snakeBody.getY());
+    target.draw(shape);
+  }
 }
 
 /** collision detection ----- **/

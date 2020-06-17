@@ -6,14 +6,17 @@
 #include <vector>
 #include "snakeBody.h"
 #include "Harta.h"
+#include <SFML/Graphics.hpp>
 
-class snake {
+class snake : public sf::Drawable {
 
 private:
   std::vector <snakeBody> body;
   int direction;
   snakeBody oldTail;
   Harta harta;
+
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
   snake(Harta);
@@ -28,7 +31,7 @@ public:
   snakeBody getSnakeHead();
 
   void deleteTail();
-  void draw();
+  //void draw();
 
   bool collision();
 
