@@ -10,7 +10,7 @@ game::~game() {
 
 void game::runGame() {
   gameWindow.create(sf::VideoMode(600, 600), "Game");
-  gameWindow.setFramerateLimit(500);
+  gameWindow.setFramerateLimit(120);
 
   Harta harta("harta.in");
   snake Snake(harta);

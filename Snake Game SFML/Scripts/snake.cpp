@@ -9,8 +9,6 @@ int incX[4] = {0, 1, 0, -1};
 int incY[4] = {-1, 0, 1, 0};
 
 snake::snake(Harta h) {
-//  int x = TABLE_LENGTH / 2;
-//  int y = TABLE_WIDTH / 2;
   harta = h;
   int x = h.length / 2;
   int y = h.width / 2;
@@ -19,7 +17,6 @@ snake::snake(Harta h) {
     body.push_back(snakeBody(x + i * 20, y));
 
   direction = 3;
-
   oldTail.setCoords(1, 1);
 }
 
