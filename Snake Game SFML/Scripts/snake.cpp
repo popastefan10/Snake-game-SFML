@@ -14,7 +14,7 @@ snake::snake(Harta h) {
   int y = h.width / 2;
 
   for(int i = 0; i < INITIAL_BODY_LENGTH; i++)
-    body.push_back(snakeBody(x + i * 20, y));
+    body.push_back(snakeBody(x + i * PIXEL, y));
 
   direction = 3;
   oldTail.setCoords(1, 1);
@@ -96,7 +96,7 @@ void snake::moveBody() {
 
   int headX = body[0].getX();
   int headY = body[0].getY();
-  body[0].setCoords(headX + incX[direction], headY + incY[direction]);
+  body[0].setCoords(headX + incX[direction] * PIXEL, headY + incY[direction] * PIXEL);
 }
 
 void snake::growTail() {

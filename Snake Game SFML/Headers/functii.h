@@ -23,6 +23,8 @@
 
 #define SELECTED_COLOUR RED
 
+#define PIXEL 20
+
 void gotoXY(int, int);
 void hideCursor();
 
