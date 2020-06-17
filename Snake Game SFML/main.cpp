@@ -10,6 +10,7 @@
 #include "Headers/pause_menu.h"
 #include "Headers/statistics.h"
 #include "Headers/Harta.h"
+#include "Headers/game.h"
 
 #include <SFML/Graphics.hpp>
 
@@ -30,18 +31,8 @@ clock_t startTime;
 
 int main() {
 
-  sf::RenderWindow gameWindow(sf::VideoMode(600, 600), "Game");
-
-  while(gameWindow.isOpen()) {
-    sf::Event event;
-
-    while(gameWindow.pollEvent(event)) {
-      if(event.type == sf::Event::Closed)
-        gameWindow.close();
-    }
-
-    gameWindow.display();
-  }
+  game newGame;
+  newGame.runGame();
 
 //  Harta harta("harta.in");
 //  /** ----- start menu ----- **/
