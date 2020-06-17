@@ -9,8 +9,8 @@ game::~game() {
 }
 
 void game::runGame() {
-  gameWindow.create(sf::VideoMode(600, 600), "Game");
-  gameWindow.setFramerateLimit(10);
+  gameWindow.create(sf::VideoMode(600, 600), "Game", sf::Style::Fullscreen);
+  gameWindow.setFramerateLimit(5);
 
   Harta harta("harta.in");
   snake Snake(harta);
@@ -24,7 +24,7 @@ void game::runGame() {
         gameWindow.close();
 
       if(event.type == sf::Event::KeyPressed) {
-        int newDirection = 0;
+        int newDirection = -1;
 
         if(event.key.code == sf::Keyboard::Up)
           newDirection = 0;

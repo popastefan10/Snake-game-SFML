@@ -77,7 +77,7 @@ void setTextColour(WORD colour) {
 
 /// checks if the new direction is not the opposite of the current direction
 bool validDirections(int dir1, int dir2) {
-  return (dir1 % 2) != (dir2 % 2);
+  return (dir1 >= 0 && dir1 < 4 && dir2 >= 0 && dir2 < 4) && ((dir1 % 2) != (dir2 % 2));
   /// 0 and 2 are not valid, as well as 1 and 3
 }
 
