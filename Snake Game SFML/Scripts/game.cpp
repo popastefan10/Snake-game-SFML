@@ -9,7 +9,7 @@ game::~game() {
 }
 
 void game::runGame() {
-  gameWindow.create(sf::VideoMode(600, 600), "Game", sf::Style::Fullscreen);
+  gameWindow.create(sf::VideoMode(1920, 1080), "Game", sf::Style::Fullscreen);
   gameWindow.setFramerateLimit(5);
 
   Harta harta("harta.in");
@@ -43,8 +43,11 @@ void game::runGame() {
     }
 
     Snake.moveBody();
+    if(Snake.collision())
+      gameWindow.close();
 
     gameWindow.clear();
+    gameWindow.draw(harta);
     gameWindow.draw(Snake);
     gameWindow.display();
   }

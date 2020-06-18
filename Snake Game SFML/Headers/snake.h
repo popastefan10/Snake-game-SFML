@@ -1,7 +1,7 @@
 #ifndef SNAKE_H_INCLUDED
 #define SNAKE_H_INCLUDED
 
-#define INITIAL_BODY_LENGTH  4
+#define INITIAL_BODY_LENGTH 4
 
 #include <vector>
 #include "snakeBody.h"

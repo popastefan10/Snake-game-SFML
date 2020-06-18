@@ -14,7 +14,7 @@ snake::snake(Harta h) {
   int y = h.width / 2;
 
   for(int i = 0; i < INITIAL_BODY_LENGTH; i++)
-    body.push_back(snakeBody(x + i * PIXEL, y));
+    body.push_back(snakeBody(x + i, y));
 
   direction = 3;
   oldTail.setCoords(1, 1);
@@ -59,11 +59,11 @@ void snake::deleteTail() {
   printf(" ");
 }
 
-void snake::draw(sf::RenderTarget &target, sf::RenderStates states) const{
+void snake::draw(sf::RenderTarget &target, sf::RenderStates states) const {
   for(auto snakeBody : body){
     sf::CircleShape shape(10);
     shape.setFillColor(sf::Color::Red);
-    shape.setPosition(snakeBody.getX(),snakeBody.getY());
+    shape.setPosition(snakeBody.getX() * PIXEL, snakeBody.getY() * PIXEL);
     target.draw(shape);
   }
 }
@@ -96,7 +96,7 @@ void snake::moveBody() {
 
   int headX = body[0].getX();
   int headY = body[0].getY();
-  body[0].setCoords(headX + incX[direction] * PIXEL, headY + incY[direction] * PIXEL);
+  body[0].setCoords(headX + incX[direction], headY + incY[direction]);
 }
 
 void snake::growTail() {
