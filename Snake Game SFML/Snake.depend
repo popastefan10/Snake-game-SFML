@@ -307,10 +307,10 @@
 1592398496 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\functii.cpp
 	"../Headers/functii.h"
 
-1592500364 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\harta.cpp
+1593452830 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\harta.cpp
 	"../Headers/Harta.h"
 
-1592500025 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\harta.h
+1593452793 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\harta.h
 	<iostream>
 	<fstream>
 	<SFML/Graphics.hpp>
@@ -334,15 +334,15 @@
 
 1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\pause_menu.h
 
-1592502255 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\snake.cpp
+1593453062 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\snake.cpp
 	<iostream>
 	<cstdio>
 	"../Headers/snake.h"
 
-1592503224 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snake.h
+1593453070 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snake.h
 	<vector>
 	"snakeBody.h"
-	"Harta.h"
+	"harta.h"
 	<SFML/Graphics.hpp>
 
 1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snakebody.h
@@ -368,7 +368,7 @@
 
 1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\statistics.h
 
-1592396237 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\main.cpp
+1593453009 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\main.cpp
 	<iostream>
 	<cstdio>
 	<time.h>
@@ -1295,11 +1295,11 @@
 	<cstdio>
 	"../Headers/snake.h"
 
-1592397604 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\game.h
-	"Harta.h"
+1593453078 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\game.h
+	"harta.h"
 	"snake.h"
 
-1592503193 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\game.cpp
+1593452877 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\game.cpp
 	"../Headers/game.h"
 
 1592397453 e:\quick access\desktop\snake-game-sfml\snake game sfml\headers\game.h

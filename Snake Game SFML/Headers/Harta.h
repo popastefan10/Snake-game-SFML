@@ -1,5 +1,6 @@
 #ifndef HARTA_H
 #define HARTA_H
+
 #include <iostream>
 #include <fstream>
 #include <SFML/Graphics.hpp>
@@ -8,21 +9,18 @@
 using namespace std;
 
 
-class Harta : public sf::Drawable
-{
-    public:
-        Harta();
-        Harta(string);
+class harta : public sf::Drawable {
+  private:
+    bool wall[100][100];
 
-        void displayHarta();
-        int width, length;
-        bool estePerete(int, int) const;
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-    private:
-        int n, m;
-        bool perete[100][100];
+  public:
+    harta();
+    harta(string);
 
-        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    int width, length;
+    bool isWall(int, int) const;
 };
 
 #endif // HARTA_H

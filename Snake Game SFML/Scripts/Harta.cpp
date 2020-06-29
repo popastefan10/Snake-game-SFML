@@ -1,46 +1,33 @@
 #include "../Headers/Harta.h"
 
-Harta::Harta()
-{
-    //ctor
+harta::harta() {
+  //ctor
 }
 
-Harta::Harta(string numeFisier){
-  ifstream in(numeFisier);
-  in>>n>>m;
-  width = n;
-  length = m;
-  for(int i = 0; i < n; i++){/// indexez de la 0 ca sa fie pozitiile ok cu cele din snake
-    for(int j = 0; j < m; j++){
-      char caracter;
-      in>>caracter;
-      if(caracter == '#')
-        perete[i][j] = true;
+harta::harta(string fileName) {
+  ifstream in(fileName);
+  in >> width >> length;
+
+  for(int i = 0; i < width; i++) { /// indexez de la 0 ca sa fie pozitiile ok cu cele din snake
+    for(int j = 0; j < length; j++){
+      char crtCh;
+      in >> crtCh;
+      if(crtCh == '#')
+        wall[i][j] = true;
       else
-        perete[i][j] = false;
+        wall[i][j] = false;
     }
   }
 }
 
-void Harta::displayHarta(){
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < m; j++){
-      if(perete[i][j]){
-        gotoXY(j,i);
-        cout<<"#";
-      }
-    }
-  }
+bool harta::isWall(int x, int y) const {
+  return wall[y][x];
 }
 
-bool Harta::estePerete(int x, int y) const {
-  return perete[y][x];
-}
-
-void Harta::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+void harta::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   for(int i = 0; i < length; i++)
     for(int j = 0; j < width; j++)
-      if(estePerete(i, j)) {
+      if(isWall(i, j)) {
         sf::RectangleShape wallBlock(sf::Vector2f((float)PIXEL, (float)PIXEL));
         wallBlock.setPosition((float)i * PIXEL, (float)j * PIXEL);
         wallBlock.setFillColor(sf::Color::Green);

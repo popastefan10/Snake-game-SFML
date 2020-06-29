@@ -8,15 +8,16 @@
 int incX[4] = {0, 1, 0, -1};
 int incY[4] = {-1, 0, 1, 0};
 
-snake::snake(Harta h) {
-  harta = h;
-  int x = h.length / 2;
-  int y = h.width / 2;
+snake::snake(harta H) {
+  Harta = H;
+  moved = true;
+  int x = H.length / 2;
+  int y = H.width / 2;
 
   for(int i = 0; i < INITIAL_BODY_LENGTH; i++)
     body.push_back(snakeBody(x + i, y));
 
-  direction = 3;
+  direction = 3; /// the snake will initially go to the left
   oldTail.setCoords(1, 1);
 }
 
@@ -35,6 +36,7 @@ int snake::getBodyLength() {
 /// direction
 
 void snake::setDirection(int dir) {
+  moved = false;
   direction = dir;
 }
 
@@ -52,7 +54,7 @@ snakeBody snake::getSnakeHead() {
   return body[0];
 }
 
-/** draw / delete ----- **/
+/** ----- draw / delete ----- **/
 
 void snake::deleteTail() {
   gotoXY(oldTail.getX(), oldTail.getY());
@@ -74,7 +76,7 @@ bool snake::collision() {
   int headX = body[0].getX();
   int headY = body[0].getY();
 
-  if(headX == 0 || headX == harta.length - 1 || headY == 0 || headY == harta.width - 1 || harta.estePerete(headX,headY))
+  if(headX == 0 || headX == Harta.length - 1 || headY == 0 || headY == Harta.width - 1 || Harta.isWall(headX,headY))
     return true;
 
   int bodyLength = getBodyLength();
@@ -85,9 +87,16 @@ bool snake::collision() {
   return false;
 }
 
+/// "moved" will change to false when the snake changes its direction
+/// and will go back to true after the snake moved once in that direction
+bool snake::hasMoved() {
+  return moved;
+}
+
 /** move / modify the body ----- **/
 
 void snake::moveBody() {
+  moved = true;
   oldTail.setCoords(body.back().getX(), body.back().getY());
 
   int bodyLength = getBodyLength();

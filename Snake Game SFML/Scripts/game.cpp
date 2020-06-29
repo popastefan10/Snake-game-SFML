@@ -12,8 +12,8 @@ void game::runGame() {
   gameWindow.create(sf::VideoMode(1920, 1080), "Game", sf::Style::Fullscreen);
   gameWindow.setFramerateLimit(5);
 
-  Harta harta("harta.in");
-  snake Snake(harta);
+  harta Harta("harta.in");
+  snake Snake(Harta);
 
   while(gameWindow.isOpen()) {
     sf::Event event;
@@ -37,7 +37,7 @@ void game::runGame() {
         else if(event.key.code == sf::Keyboard::Escape)
           gameWindow.close();
 
-        if(validDirections(Snake.getDirection(), newDirection))
+        if(Snake.hasMoved() && validDirections(Snake.getDirection(), newDirection))
           Snake.setDirection(newDirection);
       }
     }
@@ -47,7 +47,7 @@ void game::runGame() {
       gameWindow.close();
 
     gameWindow.clear();
-    gameWindow.draw(harta);
+    gameWindow.draw(Harta);
     gameWindow.draw(Snake);
     gameWindow.display();
   }

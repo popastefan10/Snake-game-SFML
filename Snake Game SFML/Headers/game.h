@@ -1,7 +1,7 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 
-#include "Harta.h"
+#include "harta.h"
 #include "snake.h"
 
 class game {

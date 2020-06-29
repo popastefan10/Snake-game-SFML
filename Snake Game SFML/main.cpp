@@ -18,7 +18,7 @@
 using namespace std;
 
 bool foodSnakeCollision(food&, snake);
-void spawnNewFood(food&, snake, Harta);
+void spawnNewFood(food&, snake, harta);
 bool ateFood(food, snake);
 void drawData(int);
 
@@ -34,7 +34,7 @@ int main() {
   game newGame;
   newGame.runGame();
 
-//  Harta harta("harta.in");
+//  harta harta("harta.in");
 //  /** ----- start menu ----- **/
 //
 //  while(startMenu()) {
@@ -152,15 +152,15 @@ bool foodSnakeCollision(food &Food, snake Snake) {
 
 /// Nic : also prevent spawing on the blocks of the map
 
-bool foodMapCollision(food &Food,Harta &harta){
-  if(harta.estePerete(Food.getX(),Food.getY()))
+bool foodMapCollision(food &Food, harta &Harta){
+  if(Harta.isWall(Food.getX(),Food.getY()))
     return true;
   return false;
 }
 
 /// sets new coordinates for the food
 
-void spawnNewFood(food &Food, snake Snake, Harta harta) {
+void spawnNewFood(food &Food, snake Snake, harta Harta) {
   do {
     srand(time(NULL));
 
@@ -169,7 +169,7 @@ void spawnNewFood(food &Food, snake Snake, Harta harta) {
 
     Food.setX(newX);
     Food.setY(newY);
-  } while(foodSnakeCollision(Food, Snake) || foodMapCollision(Food,harta));
+  } while(foodSnakeCollision(Food, Snake) || foodMapCollision(Food, Harta));
 }
 
 /// returns true if the food has been eaten, false otherwise
