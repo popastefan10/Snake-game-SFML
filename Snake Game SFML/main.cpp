@@ -31,8 +31,17 @@ clock_t startTime;
 
 int main() {
 
-  game newGame;
-  newGame.runGame();
+  vector<cScreen*> screens;
+
+  int crtScreen = 0;
+  sf::RenderWindow App(sf::VideoMode(600, 600), "Test");
+
+  game Game;
+  screens.push_back(&Game);
+
+  while(crtScreen >= 0) {
+    crtScreen = screens[crtScreen]->Run(App);
+  }
 
 //  harta harta("harta.in");
 //  /** ----- start menu ----- **/

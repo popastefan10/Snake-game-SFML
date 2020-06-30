@@ -3,17 +3,15 @@
 
 #include "harta.h"
 #include "snake.h"
+#include "cScreen.h"
 
-class game {
-
-private:
-  sf::RenderWindow gameWindow;
+class game : public cScreen {
 
 public:
   game();
   ~game();
 
-  void runGame();
+  int Run(sf::RenderWindow &App);
 };
 
 #endif // GAME_H_INCLUDED

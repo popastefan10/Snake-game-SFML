@@ -8,20 +8,22 @@ game::~game() {
 
 }
 
-void game::runGame() {
-  gameWindow.create(sf::VideoMode(1920, 1080), "Game", sf::Style::Fullscreen);
-  gameWindow.setFramerateLimit(5);
+int game::Run(sf::RenderWindow &App) {
+  App.create(sf::VideoMode(1920, 1080), "Game", sf::Style::Fullscreen);
+  App.setFramerateLimit(5);
 
   harta Harta("harta.in");
   snake Snake(Harta);
 
-  while(gameWindow.isOpen()) {
+  while(App.isOpen()) {
     sf::Event event;
 
-    while(gameWindow.pollEvent(event)) {
+    while(App.pollEvent(event)) {
 
-      if(event.type == sf::Event::Closed)
-        gameWindow.close();
+      if(event.type == sf::Event::Closed) {
+        App.close();
+        return -1;
+      }
 
       if(event.type == sf::Event::KeyPressed) {
         int newDirection = -1;
@@ -34,8 +36,10 @@ void game::runGame() {
           newDirection = 2;
         else if(event.key.code == sf::Keyboard::Left)
           newDirection = 3;
-        else if(event.key.code == sf::Keyboard::Escape)
-          gameWindow.close();
+        else if(event.key.code == sf::Keyboard::Escape) {
+          App.close();
+          return -1;
+        }
 
         if(Snake.hasMoved() && validDirections(Snake.getDirection(), newDirection))
           Snake.setDirection(newDirection);
@@ -44,11 +48,11 @@ void game::runGame() {
 
     Snake.moveBody();
     if(Snake.collision())
-      gameWindow.close();
+      return -1;
 
-    gameWindow.clear();
-    gameWindow.draw(Harta);
-    gameWindow.draw(Snake);
-    gameWindow.display();
+    App.clear();
+    App.draw(Harta);
+    App.draw(Snake);
+    App.display();
   }
 }
