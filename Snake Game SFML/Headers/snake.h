@@ -16,6 +16,7 @@ private:
   bool moved; /// this variable purpose is to prevent 180 degrees direction changes
   /// for example if the snake is going right and you press very fast up and left
   /// it shouldn't be able to turn left without going first one tile up
+
   snakeBody oldTail;
   harta Harta;
 

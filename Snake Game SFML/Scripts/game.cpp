@@ -9,7 +9,6 @@ game::~game() {
 }
 
 int game::Run(sf::RenderWindow &App) {
-  App.create(sf::VideoMode(1920, 1080), "Game", sf::Style::Fullscreen);
   App.setFramerateLimit(5);
 
   harta Harta("harta.in");
@@ -36,10 +35,8 @@ int game::Run(sf::RenderWindow &App) {
           newDirection = 2;
         else if(event.key.code == sf::Keyboard::Left)
           newDirection = 3;
-        else if(event.key.code == sf::Keyboard::Escape) {
-          App.close();
-          return -1;
-        }
+        else if(event.key.code == sf::Keyboard::Escape)
+          return 1;
 
         if(Snake.hasMoved() && validDirections(Snake.getDirection(), newDirection))
           Snake.setDirection(newDirection);
@@ -55,4 +52,7 @@ int game::Run(sf::RenderWindow &App) {
     App.draw(Snake);
     App.display();
   }
+
+  App.close();
+  return -1;
 }

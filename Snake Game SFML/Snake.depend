@@ -339,7 +339,7 @@
 	<cstdio>
 	"../Headers/snake.h"
 
-1593453070 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snake.h
+1593695812 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\snake.h
 	<vector>
 	"snakeBody.h"
 	"harta.h"
@@ -352,15 +352,18 @@
 1592392331 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\snakebody.cpp
 	"../Headers/snakeBody.h"
 
-1592392331 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\start_menu.cpp
+1593770462 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\start_menu.cpp
 	"../Headers/start_menu.h"
-	"../Headers/options_menu.h"
 
-1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\start_menu.h
-	<windows.h>
+1593698012 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\start_menu.h
 	<iostream>
+	<string>
+	<vector>
 	"functii.h"
 	"help_menu.h"
+	"options_menu.h"
+	"cScreen.h"
+	"button.h"
 
 1592392331 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\statistics.cpp
 	"../Headers/statistics.h"
@@ -368,7 +371,7 @@
 
 1592392331 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\statistics.h
 
-1593546661 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\main.cpp
+1593769627 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\main.cpp
 	<iostream>
 	<cstdio>
 	<time.h>
@@ -1295,12 +1298,12 @@
 	<cstdio>
 	"../Headers/snake.h"
 
-1593546200 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\game.h
+1593683533 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\game.h
 	"harta.h"
 	"snake.h"
 	"cScreen.h"
 
-1593546562 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\game.cpp
+1593769590 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\game.cpp
 	"../Headers/game.h"
 
 1592397453 e:\quick access\desktop\snake-game-sfml\snake game sfml\headers\game.h
@@ -1310,6 +1313,17 @@
 1592397425 source:e:\quick access\desktop\snake-game-sfml\snake game sfml\scripts\game.cpp
 	"../Headers/game.h"
 
-1593546008 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\cscreen.h
+1593770846 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\cscreen.h
 	<SFML/Graphics.hpp>
+
+1593769565 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\button.cpp
+	"../Headers/button.h"
+
+1593769351 c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\headers\button.h
+	<iostream>
+	<string>
+	<SFML/Graphics.hpp>
+
+1593770424 source:c:\stefan\info\jocuri\snake-game-sfml\snake game sfml\scripts\cscreen.cpp
+	"../Headers/cScreen.h"
 

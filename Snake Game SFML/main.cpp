@@ -31,17 +31,28 @@ clock_t startTime;
 
 int main() {
 
-  vector<cScreen*> screens;
+  sf::RenderWindow App(sf::VideoMode(1920, 1080), "Test", sf::Style::Fullscreen);
 
-  int crtScreen = 0;
-  sf::RenderWindow App(sf::VideoMode(600, 600), "Test");
+  vector<cScreen*> screens;
 
   game Game;
   screens.push_back(&Game);
 
+  start_menu StartMenu;
+  screens.push_back(&StartMenu);
+
+  /// this idea to work with screens by putting them all into a vector
+  /// and referencing them by their index within the vector isn't mine
+  /// for reference visit this tutorial on github:
+  /// https://github.com/SFML/SFML/wiki/Tutorial:-Manage-different-Screens
+
+  int crtScreen = 1;
   while(crtScreen >= 0) {
     crtScreen = screens[crtScreen]->Run(App);
   }
+
+  if(App.isOpen())
+    App.close();
 
 //  harta harta("harta.in");
 //  /** ----- start menu ----- **/
