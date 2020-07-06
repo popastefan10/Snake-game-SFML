@@ -31,7 +31,7 @@ clock_t startTime;
 
 int main() {
 
-  sf::RenderWindow App(sf::VideoMode(1920, 1080), "Test", sf::Style::Fullscreen);
+  sf::RenderWindow App(sf::VideoMode::getDesktopMode(), "Snake", sf::Style::Fullscreen);
 
   vector<cScreen*> screens;
 
