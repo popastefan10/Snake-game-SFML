@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class cScreen {
+class cScreen : public sf::Drawable {
 
 protected:
   int screenIndex;

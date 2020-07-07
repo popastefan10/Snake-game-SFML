@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\button.cpp
+1594135158 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\button.cpp
 	"../Headers/button.h"
 
-1593971394 c:\stefan\info\snake-game-sfml\snake game sfml\headers\button.h
+1594130985 c:\stefan\info\snake-game-sfml\snake game sfml\headers\button.h
 	<iostream>
 	<string>
 	<SFML/Graphics.hpp>
@@ -419,7 +419,7 @@
 1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\cscreen.cpp
 	"../Headers/cScreen.h"
 
-1593971394 c:\stefan\info\snake-game-sfml\snake game sfml\headers\cscreen.h
+1594129423 c:\stefan\info\snake-game-sfml\snake game sfml\headers\cscreen.h
 	<SFML/Graphics.hpp>
 
 1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\food.cpp
@@ -439,10 +439,10 @@
 1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\functii.cpp
 	"../Headers/functii.h"
 
-1593972025 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\game.cpp
+1594136360 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\game.cpp
 	"../Headers/game.h"
 
-1593971991 c:\stefan\info\snake-game-sfml\snake game sfml\headers\game.h
+1594129369 c:\stefan\info\snake-game-sfml\snake game sfml\headers\game.h
 	"harta.h"
 	"snake.h"
 	"cScreen.h"
@@ -453,7 +453,7 @@
 	<SFML/Graphics.hpp>
 	"../Headers/functii.h"
 
-1593971394 c:\stefan\info\snake-game-sfml\snake game sfml\headers\snake.h
+1594129249 c:\stefan\info\snake-game-sfml\snake game sfml\headers\snake.h
 	<vector>
 	"snakeBody.h"
 	"harta.h"
@@ -484,7 +484,7 @@
 
 1593971394 c:\stefan\info\snake-game-sfml\snake game sfml\headers\pause_menu.h
 
-1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\snake.cpp
+1594129479 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\snake.cpp
 	<iostream>
 	<cstdio>
 	"../Headers/snake.h"
@@ -492,18 +492,17 @@
 1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\snakebody.cpp
 	"../Headers/snakeBody.h"
 
-1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\start_menu.cpp
+1594135416 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\start_menu.cpp
 	"../Headers/start_menu.h"
 
-1593971394 c:\stefan\info\snake-game-sfml\snake game sfml\headers\start_menu.h
+1594116795 c:\stefan\info\snake-game-sfml\snake game sfml\headers\start_menu.h
 	<iostream>
 	<string>
 	<vector>
 	"functii.h"
 	"help_menu.h"
 	"options_menu.h"
-	"cScreen.h"
-	"button.h"
+	"menu.h"
 
 1593971394 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\statistics.cpp
 	"../Headers/statistics.h"
@@ -511,7 +510,7 @@
 
 1593971394 c:\stefan\info\snake-game-sfml\snake game sfml\headers\statistics.h
 
-1594046492 source:c:\stefan\info\snake-game-sfml\snake game sfml\main.cpp
+1594131177 source:c:\stefan\info\snake-game-sfml\snake game sfml\main.cpp
 	<iostream>
 	<cstdio>
 	<time.h>
@@ -935,4 +934,12 @@
 	<SFML/Graphics/PrimitiveType.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
+
+1594130899 c:\stefan\info\snake-game-sfml\snake game sfml\headers\menu.h
+	<vector>
+	"cScreen.h"
+	"button.h"
+
+1594135194 source:c:\stefan\info\snake-game-sfml\snake game sfml\scripts\menu.cpp
+	"../Headers/menu.h"
 

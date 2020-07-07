@@ -20,34 +20,6 @@ start_menu::~start_menu() {
 
 }
 
-/** ----- accessors (set) and mutators (get) ----- **/
-
-void start_menu::setSelected(int newSel) {
-  selected = newSel;
-}
-
-int start_menu::getSelected() {
-  return selected;
-}
-
-void start_menu::setFont(sf::Font newFont) {
-  font = newFont;
-}
-
-sf::Font start_menu::getFont() {
-  return font;
-}
-
-int start_menu::getNumberOfButtons() {
-  return Buttons.size();
-}
-
-void start_menu::add_button(std::string buttonText, float posX, float posY, int screenIndex) {
-  button btn(buttonText, posX, posY, screenIndex);
-  btn.setFont(font);
-  Buttons.push_back(btn);
-}
-
 /** ----- Run inherited from cScreen ----- **/
 
 int start_menu::Run(sf::RenderWindow &App) {
@@ -59,6 +31,10 @@ int start_menu::Run(sf::RenderWindow &App) {
 
   for(int i = 1; i < (int)Buttons.size(); i++)
     Buttons[i].unselect();
+
+  for(int i = 0; i < (int)Buttons.size(); i++) {
+    Buttons[i].setFont(font);
+  }
 
   sf::Event event;
   while(App.isOpen()) {
@@ -91,9 +67,7 @@ int start_menu::Run(sf::RenderWindow &App) {
       }
     }
 
-    App.clear();
-    for(auto &Button : Buttons)
-      App.draw(Button);
+    App.draw(*this);
     App.display();
   }
 

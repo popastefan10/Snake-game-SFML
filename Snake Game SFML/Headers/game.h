@@ -7,6 +7,12 @@
 
 class game : public cScreen {
 
+private:
+  harta Harta;
+  snake Snake;
+
+  virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+
 public:
   game();
   ~game();

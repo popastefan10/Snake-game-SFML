@@ -8,6 +8,19 @@
 int incX[4] = {0, 1, 0, -1};
 int incY[4] = {-1, 0, 1, 0};
 
+snake::snake() {
+  Harta = harta("harta_originala.txt");
+  moved = true;
+  int x = Harta.length / 2;
+  int y = Harta.width / 2;
+
+  for(int i = 0; i < INITIAL_BODY_LENGTH; i++)
+    body.push_back(snakeBody(x + i, y));
+
+  direction = 3; /// the snake will initially go to the left
+  oldTail.setCoords(1, 1);
+}
+
 snake::snake(harta H) {
   Harta = H;
   moved = true;

@@ -8,11 +8,17 @@ game::~game() {
 
 }
 
-int game::Run(sf::RenderWindow &App) {
-  App.setFramerateLimit(5);
+void game::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+  target.clear();
+  target.draw(Harta);
+  target.draw(Snake);
+}
 
-  harta Harta("harta.in");
-  snake Snake(Harta);
+int game::Run(sf::RenderWindow &App) {
+  Harta = harta("harta.in");
+  Snake = snake(Harta);
+
+  App.setFramerateLimit(5);
 
   while(App.isOpen()) {
     sf::Event event;
@@ -45,11 +51,9 @@ int game::Run(sf::RenderWindow &App) {
 
     Snake.moveBody();
     if(Snake.collision())
-      return -1;
+      return 1;
 
-    App.clear();
-    App.draw(Harta);
-    App.draw(Snake);
+    App.draw(*this);
     App.display();
   }
 
